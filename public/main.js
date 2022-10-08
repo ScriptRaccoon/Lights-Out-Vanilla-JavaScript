@@ -30,9 +30,9 @@ function createBoard() {
 			checkBoxes.push(checkBox);
 			boardElement.appendChild(checkBox);
 			checkBox.id = x + "," + y;
-			checkBox.addEventListener("change", () =>
-				changeCheckBox(x, y)
-			);
+			checkBox.addEventListener("change", function () {
+				changeCheckBox(x, y);
+			});
 			const labelElement = document.createElement("label");
 			labelElement.setAttribute("for", checkBox.id);
 			boardElement.appendChild(labelElement);
@@ -41,7 +41,7 @@ function createBoard() {
 }
 
 function initializeCheckBoxes() {
-	checkBoxes.forEach((checkBox) => {
+	checkBoxes.forEach(function (checkBox) {
 		checkBox.checked = !boxesOff.includes(checkBox.id);
 	});
 }
@@ -63,7 +63,9 @@ function changeCheckBox(x, y) {
 }
 
 function checkWin() {
-	const hasWon = checkBoxes.every((checkBox) => !checkBox.checked);
+	const hasWon = checkBoxes.every(function (checkBox) {
+		return !checkBox.checked;
+	});
 	if (hasWon) {
 		winElement.classList.add("visible");
 	}
@@ -76,7 +78,7 @@ function restartGame() {
 
 function randomizeGame() {
 	boxesOff = [];
-	checkBoxes.forEach((checkBox) => {
+	checkBoxes.forEach(function (checkBox) {
 		if (Math.random() < 0.5) {
 			boxesOff.push(checkBox.id);
 		}
