@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Lichter aus!</title>
+		<script src="main.js" defer></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<h1>Lichter aus!</h1>
+		<p>
+			Versuche, alle Lichter auszumachen! Beachte, dass mit
+			jedem Schalter auch die benachbarten Schalter betätigt
+			werden. Nicht jede Anordnung ist lösbar.
+		</p>
+		<main id="board"></main>
+		<menu>
+			<button id="restartBtn">Neustart</button>
+			<button id="randomizeBtn">Randomisiere</button>
+			<label for="sizeInput">
+				Größe
+				<input
+					type="text"
+					id="sizeInput"
+					pattern="\d+"
+					value="5"
+				/>
+			</label>
+		</menu>
+		<p id="win">Super! Du hast es geschafft.</p>
+	</body>
+</html>
