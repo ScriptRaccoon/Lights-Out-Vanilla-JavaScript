@@ -31,11 +31,8 @@ function createBoard() {
 			boardElement.appendChild(checkBox);
 			checkBox.id = x + "," + y;
 			checkBox.addEventListener("change", function () {
-				changeCheckBox(x, y);
-			});
-			const labelElement = document.createElement("label");
-			labelElement.setAttribute("for", checkBox.id);
-			boardElement.appendChild(labelElement);
+        changeCheckBox(x, y);
+      });
 		}
 	}
 }

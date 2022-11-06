@@ -50,35 +50,32 @@ h1 {
 	margin: 50px 0px;
 }
 
-/* checkboxes and labels */
+/* checkboxes */
 
 input[type="checkbox"] {
-	display: none;
+	appearance: none;
+	border-radius: 5px;
+	transition: background-color 200ms, box-shadow 200ms;
+	cursor: pointer;
 }
 
-input[type="checkbox"] + label {
+input[type="checkbox"] {
 	background-color: #ddd;
 }
 
-input[type="checkbox"]:checked + label {
+input[type="checkbox"]:checked {
 	background-color: #dd0;
 	box-shadow: 0px 0px 10px #ff0b;
 }
 
 @media (prefers-color-scheme: dark) {
-	input[type="checkbox"] + label {
+	input[type="checkbox"] {
 		background-color: #222;
 	}
 
-	input[type="checkbox"]:checked + label {
+	input[type="checkbox"]:checked {
 		background-color: #ff0;
 	}
-}
-
-#board label {
-	border-radius: 5px;
-	transition: background-color 200ms, box-shadow 200ms;
-	cursor: pointer;
 }
 
 /* result message */
