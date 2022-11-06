@@ -57,7 +57,7 @@ function createBoard() {
 
 function initializeCheckBoxes() {
   checkBoxes.forEach(function (checkBox) {
-    checkBox.checked = !boxesOff.includes(checkBox.id);
+    checkBox.checked = !boxesOff.includes(checkBox);
   });
 }
 
@@ -90,27 +90,27 @@ function changeCheckBox(x, y) {
 }
 
 function checkWin() {
-	const hasWon = checkBoxes.every(function (checkBox) {
-		return !checkBox.checked;
-	});
-	if (hasWon) {
-		winElement.classList.add("visible");
-	}
+  const hasWon = checkBoxes.every(function (checkBox) {
+    return !checkBox.checked;
+  });
+  if (hasWon) {
+    winElement.classList.add("visible");
+  }
 }
 
 function restartGame() {
-	winElement.classList.remove("visible");
-	initializeCheckBoxes();
+  winElement.classList.remove("visible");
+  initializeCheckBoxes();
 }
 
 function randomizeGame() {
-	boxesOff = [];
-	checkBoxes.forEach(function (checkBox) {
-		if (Math.random() < 0.5) {
-			boxesOff.push(checkBox.id);
-		}
-	});
-	restartGame();
+  boxesOff = [];
+  checkBoxes.forEach(function (checkBox) {
+    if (Math.random() < 0.5) {
+      boxesOff.push(checkBox);
+    }
+  });
+  restartGame();
 }
 
 function resizeGame() {
