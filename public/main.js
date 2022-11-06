@@ -84,8 +84,8 @@ function toggle(checkBox) {
 function changeCheckBox(x, y) {
   if (x > 0) toggle(getCheckBox(x - 1, y));
   if (y > 0) toggle(getCheckBox(x, y - 1));
-  if (x <= size) toggle(getCheckBox(x + 1, y));
-  if (y <= size) toggle(getCheckBox(x, y + 1));
+  if (x < size - 1) toggle(getCheckBox(x + 1, y));
+  if (y < size - 1) toggle(getCheckBox(x, y + 1));
   checkWin();
 }
 
