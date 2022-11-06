@@ -58,6 +58,19 @@
 				/>
 			</label>
 		</menu>
-		<p id="win">Super! Du hast es geschafft.</p>
+		<!--
+			The hidden-attribute is available for most elements in HTML5,
+			every browser nowdays implement it like this in their CSS:
+			[hidden] { display: none }
+			and can be accessed by JS as a boolean like so: element.hidden = true
+
+			You may ask yourself: why use an attribute instead of a class?
+			Short answer: it's a state and not a variant.
+			Long answer: using a property, that only can be on or off helps reducing your state management.
+			  in this case, it's simple to keep the state "has a class 'visible'" in mind,
+				but for your upcomming large scale mmorpg project, this will bite you soon or late.
+				So: it's "just" good practice.
+		 -->
+		<p id="win" hidden>Super! Du hast es geschafft.</p>
 	</body>
 </html>

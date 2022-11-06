@@ -94,12 +94,12 @@ function checkWin() {
     return !checkBox.checked;
   });
   if (hasWon) {
-    winElement.classList.add("visible");
+    winElement.hidden = false;
   }
 }
 
 function restartGame() {
-  winElement.classList.remove("visible");
+  winElement.hidden = true;
   initializeCheckBoxes();
 }
 

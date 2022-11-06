@@ -83,14 +83,20 @@ input[type="checkbox"]:checked {
 #win {
 	color: #ff0;
 	margin: 20px 0px;
-	opacity: 0;
-	scale: 0;
+	opacity: 1;
+	scale: 1;
 	transition: opacity 150ms, scale 150ms;
 }
 
-#win.visible {
-	scale: 1;
-	opacity: 1;
+#win[hidden] {
+	/*
+	without using display: block, the browser-default's none is present.
+	this enables the transition to happen
+	otherwise: it just "pops", because transitioning between "none" and "block" isn't possible
+	*/
+	display: block;
+	scale: 0;
+	opacity: 0;
 }
 
 /* menu */
