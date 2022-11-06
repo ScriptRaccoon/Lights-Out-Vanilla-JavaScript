@@ -137,7 +137,9 @@ button:active {
 
 /* input */
 
-input[type="text"] {
+input[type="number"] {
+	/* removes up/down-number gizmo */
+	appearance: textfield;
 	font-family: inherit;
 	background: none;
 	/* defining "color" isn't nessecary anymore */
@@ -149,10 +151,10 @@ input[type="text"] {
 	width: 50px;
 }
 
-input[type="text"]:focus:valid {
+input[type="number"]:focus:valid {
 	border-color: green;
 }
 
-input[type="text"]:invalid {
+input[type="number"]:invalid {
 	border-color: red;
 }

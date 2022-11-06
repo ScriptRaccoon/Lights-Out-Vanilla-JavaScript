@@ -87,12 +87,19 @@ function randomizeGame() {
 }
 
 function resizeGame() {
-	const newSize = parseInt(sizeInput.value);
-	if (newSize >= 0) {
-		size = newSize;
-		boxesOff = [];
-		createBoard();
-		boardElement.style.setProperty("--size", size);
-		restartGame();
-	}
+  /* No need to parse, if the value is read as number.
+	Sidenote: parseInt(x) without the base parameter accepts every kind of notation:
+		- "0xF" will return 15: it's interpreted as HEX value.
+		- "1e3" will return 100, it's interpreted as a scientific notation.
+	 */
+  const newSize = sizeInput.valueAsNumber;
+  /* a size of 0 doesn't make sense here,
+		so i check of values greater then 0, instead of  */
+  if (newSize > 0) {
+    size = newSize;
+    boxesOff = [];
+    createBoard();
+    boardElement.style.setProperty("--size", size);
+    restartGame();
+  }
 }
