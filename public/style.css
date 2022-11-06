@@ -1,5 +1,10 @@
 /* general styles */
 
+:root {
+	/* hint the Browser: we style "light" and "dark" color schemes */
+	color-scheme: dark light;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -7,8 +12,10 @@
 }
 
 body {
-	background-color: #112;
-	color: white;
+	/* value Canvas means: use browsers default background color, influenced by UI theme */
+	background-color: Canvas;
+	/* value CanvasText means: use browsers default text color (similar to Canvas value) */
+	color: CanvasText;
 	font-size: 24px;
 	font-family: "Trebuchet MS", "Lucida Sans Unicode",
 		"Lucida Grande", "Lucida Sans", Arial, sans-serif;
@@ -16,6 +23,12 @@ body {
 	flex-direction: column;
 	align-items: center;
 	padding: 0px 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #112;
+	}
 }
 
 /* heading */
@@ -43,13 +56,23 @@ input[type="checkbox"] {
 	display: none;
 }
 
+input[type="checkbox"] + label {
+	background-color: #ddd;
+}
+
 input[type="checkbox"]:checked + label {
-	background-color: #ff0;
+	background-color: #dd0;
 	box-shadow: 0px 0px 10px #ff0b;
 }
 
-input[type="checkbox"]:not(:checked) + label {
-	background-color: #222;
+@media (prefers-color-scheme: dark) {
+	input[type="checkbox"] + label {
+		background-color: #222;
+	}
+
+	input[type="checkbox"]:checked + label {
+		background-color: #ff0;
+	}
 }
 
 #board label {
@@ -89,16 +112,23 @@ button {
 	font-family: inherit;
 	font-size: inherit;
 	padding: 6px 10px;
-	border: 2px solid white;
+	border: 2px solid CanvasText;
 	background: none;
-	color: inherit;
+	/* defining "color" isn't nessecary anymore */
 	cursor: pointer;
 	border-radius: 8px;
 }
 
 button:hover,
 button:focus-visible {
-	box-shadow: 0px 0px 8px #fffa;
+	box-shadow: 0px 0px 8px #33fa;
+}
+
+@media (prefers-color-scheme: dark) {
+	button:hover,
+	button:focus-visible {
+		box-shadow: 0px 0px 8px #fffa;
+	}	
 }
 
 button:active {
@@ -110,9 +140,9 @@ button:active {
 input[type="text"] {
 	font-family: inherit;
 	background: none;
-	color: inherit;
+	/* defining "color" isn't nessecary anymore */
 	font-size: inherit;
-	border: 2px solid white;
+	border: 2px solid CanvasText;
 	outline: none;
 	text-align: center;
 	padding: 6px;

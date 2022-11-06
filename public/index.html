@@ -2,7 +2,19 @@
 <html lang="de">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!--
+			this is a hint for the Browser:
+			don't flash a white background before the style is parsed,
+			instead use a dark one.
+			we support "light" and "dark" color schemes
+			(the info is provided by modern operating system themes)
+		-->
+		<meta name="color-sheme" content="dark light" />
+		<!-- If the browser supports colored UI, use light or dark color.
+			on Chromium based (Chrome, Edge, Opera, Brave, etc.): white for light and Black for dark
+			on Firefox: white for light and #1c1b22 for dark
+		-->
+		<meta name="theme-color" content="Canvas">
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
